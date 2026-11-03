@@ -29,11 +29,10 @@ namespace Biglov41SizeProg
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            if(Manager.MainFrame.CanGoBack)
-                Manager.MainFrame.GoBack();
+            Manager.MainFrame.GoBack();
         }
 
-        private void ProductPg_ContentRendered(object sender, EventArgs e)
+        private void ProductPg_ContentRendered_1(object sender, EventArgs e)
         {
             if (Manager.MainFrame.CanGoBack)
             {
@@ -41,7 +40,7 @@ namespace Biglov41SizeProg
             }
             else
             {
-                BtnBack.Visibility = Visibility.Collapsed;
+                BtnBack.Visibility = Visibility.Hidden;
             }
         }
     }

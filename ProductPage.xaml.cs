@@ -24,5 +24,10 @@ namespace Biglov41SizeProg
         {
             InitializeComponent();
         }
+
+        private void GoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new AddEditPage());
+        }
     }
 }

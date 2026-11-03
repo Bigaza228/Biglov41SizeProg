@@ -6,9 +6,9 @@
       xmlns:local="clr-namespace:Biglov41SizeProg"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductPage">
+      Title="ProductPage" FontFamily="Comic Sans MS">
 
     <Grid>
-        <ListView Name="ListViewProduct"></ListView>
+        <Button Name="GoBtn" Content="Go" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="GoBtn_Click"></Button>
     </Grid>
 </Page>
