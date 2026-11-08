@@ -23,11 +23,32 @@ namespace Biglov41SizeProg
         public ProductPage()
         {
             InitializeComponent();
+            //var TempToProductListView = Biglov41SizeEntities.GetContext().Product.ToList();
+            //ProductListView.ItemsSource = TempToProductListView.Select(x => (string.IsNullOrWhiteSpace(x.ToString()) ? null : x)).ToList();
+            ProductListView.ItemsSource = Biglov41SizeEntities.GetContext().Product.ToList();
+        }
+        public void UpdateProductListView()
+        {
+            ProductListView.ItemsSource = Biglov41SizeEntities.GetContext().Product.ToList();
         }
 
-        private void GoBtn_Click(object sender, RoutedEventArgs e)
+        private void RemBtn_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new AddEditPage());
+            MessageBoxResult result = MessageBox.Show("Точно ли хотите удалить?", "подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result != MessageBoxResult.Yes)
+                return;
+            Product _currentProduct = (sender as Button)?.DataContext as Product;
+            Biglov41SizeEntities.GetContext().Product.Remove(_currentProduct);
+            try
+            {
+                Biglov41SizeEntities.GetContext().SaveChanges();
+                MessageBox.Show("Удаление прошло успешно");
+                UpdateProductListView();
+            }
+            catch
+            {
+                MessageBox.Show("Удаление не получилось", "ошибка");
+            }
         }
     }
 }

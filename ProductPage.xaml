@@ -9,6 +9,48 @@
       Title="ProductPage" FontFamily="Comic Sans MS">
 
     <Grid>
-        <Button Name="GoBtn" Content="Go" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="GoBtn_Click"></Button>
+        <ListView Name="ProductListView" Margin="5" HorizontalContentAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray" BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Stretch="Uniform">
+                                <Image.Source>
+                                    <Binding Path="ProductPhotoPath">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>res\picture.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                            <TextBlock Text="{Binding ProductName}" Grid.Column="1" Grid.Row="0" Margin="5"></TextBlock>
+                            <TextBlock Text="{Binding ProductDescription}" Grid.Column="1" Grid.Row="1" Margin="5"></TextBlock>
+                            <TextBlock Text="Стоимость:" Grid.Column="4" Grid.Row="0" Margin="5"></TextBlock>
+                            <TextBlock Text="{Binding ProductCost}" Grid.Column="5" Grid.Row="0" Margin="5"></TextBlock>
+                            <TextBlock Text="| Скидка:" Grid.Column="2" Grid.Row="1" Margin="5" HorizontalAlignment="Right"></TextBlock>
+                            <TextBlock Text="{Binding ProductDiscountAmount}" Grid.Column="3" Grid.Row="1" Margin="5" HorizontalAlignment="Right"></TextBlock>
+                            <TextBlock Text="Кол-во:" Grid.Column="4" Grid.Row="1" Margin="5" HorizontalAlignment="Right"></TextBlock>
+                            <TextBlock Text="{Binding ProductQuantityInStock}" Grid.Column="5" Grid.Row="1" Margin="5"></TextBlock>
+                            <Button Name="RemBtn" Content="Удалить" Grid.Row="2"
+                                    Grid.Column="5" Width="100" Height="30" FontSize="20"
+                                    HorizontalAlignment="Right" Click="RemBtn_Click"></Button>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
