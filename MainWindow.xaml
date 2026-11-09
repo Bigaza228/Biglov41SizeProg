@@ -5,16 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Biglov41SizeProg"
         mc:Ignorable="d"
-        Icon="res\icon.ico"
-        Title="Biglov41Size" Height="650" Width="900" FontFamily="Comic Sans MS">
+        Icon="Res\icon.ico"
+        Title="Biglov41Size" Height="700" Width="1000" FontFamily="Comic Sans MS">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
-            <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="15"/>
         </Grid.RowDefinitions>
-        <Image Source="res\logo.png" Grid.Row="0" HorizontalAlignment="Left" Margin="2"></Image>
+        <Image Source="Res\logo.png" Grid.Row="0" HorizontalAlignment="Left" Margin="2"></Image>
         <TextBlock Style="{StaticResource CustomTextStyle}" Text="ООО «41 размер»" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <Button Name="BtnBack" Content="Назад" Grid.Row="0" HorizontalAlignment="Right" Visibility="Collapsed" Click="BtnBack_Click"></Button>
         <Frame Name="ProductPg" Grid.Row="2" ContentRendered="ProductPg_ContentRendered_1" NavigationUIVisibility="Hidden"/>

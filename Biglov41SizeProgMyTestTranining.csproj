@@ -163,9 +163,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="res\icon.ico" />
-    <Resource Include="res\logo.png" />
-    <Resource Include="res\picture.png" />
+    <Resource Include="Res\icon.ico" />
+    <Resource Include="Res\logo.png" />
+    <Resource Include="Res\DefaultPicture.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Товар_import\B320R5.jpg" />

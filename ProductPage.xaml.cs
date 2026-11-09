@@ -23,8 +23,6 @@ namespace Biglov41SizeProg
         public ProductPage()
         {
             InitializeComponent();
-            //var TempToProductListView = Biglov41SizeEntities.GetContext().Product.ToList();
-            //ProductListView.ItemsSource = TempToProductListView.Select(x => (string.IsNullOrWhiteSpace(x.ToString()) ? null : x)).ToList();
             ProductListView.ItemsSource = Biglov41SizeEntities.GetContext().Product.ToList();
         }
         public void UpdateProductListView()
