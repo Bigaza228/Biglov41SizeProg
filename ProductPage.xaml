@@ -10,14 +10,40 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        
-        
-        <ListView Name="ProductListView" Margin="5" HorizontalContentAlignment="Stretch" Grid.Row="3">
+
+        <WrapPanel Grid.Row="0" Orientation="Horizontal" Margin="5" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock Style="{StaticResource CustomTextStyle}" Name="TBlogin"/>
+                <TextBlock Style="{StaticResource CustomTextStyle}" Name="TBrole"/>
+            </StackPanel>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+            <TextBlock Style="{StaticResource CustomTextStyle}" Name="TBcount" VerticalAlignment="Center" Margin="5,0,15,0"/>
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock Style="{StaticResource CustomTextStyle}" Text="поиск по наименованию"/>
+                <TextBox Name="TBsearchName" TextChanged="TBsearchName_TextChanged"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="5">
+                <RadioButton Name="RButtonUp" Content="по возрастанию стоимости" FontSize="20" GroupName="Sort" Checked="RButtonUp_Checked"/>
+                <RadioButton Name="RButtonDown" Content="по убыванию стоимости" FontSize="20" GroupName="Sort" Checked="RButtonDown_Checked"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock Style="{StaticResource CustomTextStyle}" Text="фильтрация по скидке"/>
+                <ComboBox Name="CBoxSort" SelectionChanged="CBoxSort_SelectionChanged">
+                    <TextBlock>Все</TextBlock>
+                    <TextBlock>0-9,99%</TextBlock>
+                    <TextBlock>10-14,99%</TextBlock>
+                    <TextBlock>15% и более</TextBlock>
+                </ComboBox>
+            </StackPanel>
+        </WrapPanel>
+
+        <ListView Name="ProductListView" Margin="5" HorizontalContentAlignment="Stretch" Grid.Row="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Gray" BorderThickness="1">

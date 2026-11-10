@@ -16,6 +16,6 @@
         <Image Source="Res\logo.png" Grid.Row="0" HorizontalAlignment="Left" Margin="2"></Image>
         <TextBlock Style="{StaticResource CustomTextStyle}" Text="ООО «41 размер»" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <Button Name="BtnBack" Content="Назад" Grid.Row="0" HorizontalAlignment="Right" Visibility="Collapsed" Click="BtnBack_Click"></Button>
-        <Frame Name="ProductPg" Grid.Row="2" ContentRendered="ProductPg_ContentRendered_1" NavigationUIVisibility="Hidden"/>
+        <Frame Name="ProductPg" Grid.Row="1" ContentRendered="ProductPg_ContentRendered_1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

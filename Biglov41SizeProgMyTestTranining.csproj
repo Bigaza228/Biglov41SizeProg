@@ -64,10 +64,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AuthPage.xaml.cs">
+      <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Biglov41Size.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Biglov41Size.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CaptchaPage.xaml.cs">
+      <DependentUpon>CaptchaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>Biglov41Size.tt</DependentUpon>
@@ -90,7 +96,11 @@
     <Compile Include="User.cs">
       <DependentUpon>Biglov41Size.tt</DependentUpon>
     </Compile>
-    <Page Include="AddEditPage.xaml">
+    <Page Include="AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CaptchaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,9 +108,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddEditPage.xaml.cs">
-      <DependentUpon>AddEditPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

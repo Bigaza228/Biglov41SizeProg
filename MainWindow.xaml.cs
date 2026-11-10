@@ -24,7 +24,7 @@ namespace Biglov41SizeProg
         {
             InitializeComponent();
             Manager.MainFrame = ProductPg;
-            Manager.MainFrame.Navigate(new ProductPage());
+            Manager.MainFrame.Navigate(new AuthPage());
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -34,7 +34,7 @@ namespace Biglov41SizeProg
 
         private void ProductPg_ContentRendered_1(object sender, EventArgs e)
         {
-            if (Manager.MainFrame.CanGoBack)
+            if (Manager.MainFrame.CanGoBack && !(Manager.MainFrame.Content is CaptchaPage))
             {
                 BtnBack.Visibility = Visibility.Visible;
             }
