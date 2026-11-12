@@ -34,7 +34,7 @@ namespace Biglov41SizeProg
 
         private void ProductPg_ContentRendered_1(object sender, EventArgs e)
         {
-            if (Manager.MainFrame.CanGoBack && !(Manager.MainFrame.Content is CaptchaPage) && !(Manager.MainFrame.Content is ProductPage))
+            if (Manager.MainFrame.CanGoBack)
             {
                 BtnBack.Visibility = Visibility.Visible;
             }

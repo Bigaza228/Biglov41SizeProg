@@ -72,9 +72,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Biglov41Size.tt</DependentUpon>
     </Compile>
-    <Compile Include="CaptchaPage.xaml.cs">
-      <DependentUpon>CaptchaPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>Biglov41Size.tt</DependentUpon>
     </Compile>
@@ -97,10 +94,6 @@
       <DependentUpon>Biglov41Size.tt</DependentUpon>
     </Compile>
     <Page Include="AuthPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CaptchaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -13,16 +13,23 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource CustomTextStyle}" Text="Логин" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20"/>
-        <TextBlock Name="TBlockCaptha" Style="{StaticResource CustomTextStyle}" Text="Пароль" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20"/>
+        <TextBlock Style="{StaticResource CustomTextStyle}" Text="Пароль" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20"/>
         <TextBox Name="TBlogin" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20" Height="25" Width="200"/>
         <TextBox Name="TBpassword" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20" Height="25" Width="200"/>
-        <Button Name="LoginHost" Content="Войти как гость" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Click="LoginHost_Click"/>
-        <Button Name="LoginALT" Content="Войти" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="LoginALT_Click"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Name="TblockCaptcha" Style="{StaticResource CustomTextStyle}" Text="Введите капчу" Visibility="Collapsed"/>
+            <TextBlock Name="TblockTextCaptcha" Style="{StaticResource CustomTextStyle}" TextDecorations="Strikethrough" Visibility="Collapsed"/>
+        </StackPanel>
+        <TextBox Name="TBcapthca" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" 
+                 HorizontalAlignment="Left" Margin="20" Height="25" Width="200" Visibility="Collapsed"/>
+        <Button Name="LoginHost" Content="Войти как гость" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Click="LoginHost_Click"/>
+        <Button Name="LoginALT" Content="Войти" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="LoginALT_Click"/>
     </Grid>
 </Page>
