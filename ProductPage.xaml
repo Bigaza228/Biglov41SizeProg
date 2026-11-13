@@ -19,6 +19,7 @@
             <StackPanel Orientation="Vertical" Margin="5">
                 <TextBlock Style="{StaticResource CustomTextStyle}" Name="TBlogin"/>
                 <TextBlock Style="{StaticResource CustomTextStyle}" Name="TBrole"/>
+                <Button Name="BTGoOrder" Content="Заказать" Click="BTGoOrder_Click"/>
             </StackPanel>
         </WrapPanel>
 

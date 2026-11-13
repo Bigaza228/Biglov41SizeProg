@@ -29,6 +29,7 @@ namespace Biglov41SizeProg
         public string ProductSupplier { get; set; }
         public int ProductCategoryID { get; set; }
         public double ProductDiscountAmount { get; set; }
+        public int CountForOrder { get; set; }
         public int ProductDiscountAmountInt
         {
             get

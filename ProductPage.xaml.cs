@@ -20,8 +20,9 @@ namespace Biglov41SizeProg
     /// </summary>
     public partial class ProductPage : Page
     {
-        public int countProductInStock;
-        public User user {  get; set; }
+        private int countProductInStock;
+        private User user {  get; set; }
+        private List<Product> productsForLV;
         public ProductPage(User user, bool isHost)
         {
             InitializeComponent();
@@ -70,25 +71,7 @@ namespace Biglov41SizeProg
             TBcount.Text = $"кол-во {countProductInStock} из {Biglov41SizeEntities.GetContext().Product.Count().ToString()}";
 
             ProductListView.ItemsSource = ListProduct;
-        }
-
-        private void RemBtn_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Точно ли хотите удалить?", "подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result != MessageBoxResult.Yes)
-                return;
-            Product _currentProduct = (sender as Button)?.DataContext as Product;
-            Biglov41SizeEntities.GetContext().Product.Remove(_currentProduct);
-            try
-            {
-                Biglov41SizeEntities.GetContext().SaveChanges();
-                MessageBox.Show("Удаление прошло успешно");
-                UpdateProductListView();
-            }
-            catch
-            {
-                MessageBox.Show("Удаление не получилось", "ошибка");
-            }
+            productsForLV = ListProduct;
         }
 
         private void TBsearchName_TextChanged(object sender, TextChangedEventArgs e)
@@ -109,6 +92,11 @@ namespace Biglov41SizeProg
         private void CBoxSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateProductListView();
+        }
+
+        private void BTGoOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new OrderPage(user, productsForLV));
         }
     }
 }
